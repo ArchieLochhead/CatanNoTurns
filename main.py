@@ -27,7 +27,7 @@ def roll_dice():
 
 
     # Schedule the next roll after 60 seconds (60000 ms)
-    rolling = root.after(10000, roll_dice)
+    rolling = root.after(60000, roll_dice)
 
 def start_rolling():
     global rolling
@@ -44,13 +44,19 @@ def stop_rolling():
 # Create the main window
 root = tk.Tk()
 root.title("Dice Roller")
+root['bg'] = '#26e0dd'
+Title = tk.Label(root, text="Catan: No-Turns Mode", font=("Arial", 100), fg="white")
+Title.pack(pady=0)
+Title['bg'] = '#26e0dd'
 
 # Label to display the result
 result_label_1 = tk.Label(root, text="", font=("Arial", 300))
 result_label_1.pack(pady=10)
+result_label_1['bg'] = '#26e0dd'
 
 robber_label = tk.Label(root, text="", font=("Arial", 100), fg="red")
 robber_label.pack(pady=2)
+robber_label['bg'] = '#26e0dd'
 
 # Start button
 start_button = tk.Button(root, text="Start", command=start_rolling, font=("Arial", 14), highlightbackground='#00cc00')
